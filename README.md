@@ -7,7 +7,9 @@ File with text should be in your repository.
 
 ```
 $ python3 lang_frequency.py
+  
   Enter path to file with text: <filepath>
+  
   Your 6
   A 6
   Of 5
