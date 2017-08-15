@@ -1,6 +1,6 @@
 # Frequency Analysis of Words
 
-This script shows 10 most frequent words in any text from file.
+This script shows most frequent words in any text from file. 
 
 # Using 
 File with text should be in your repository. 
