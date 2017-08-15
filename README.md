@@ -6,9 +6,7 @@ This script shows 10 most frequent words in any text from file.
 File with text should be in your repository. 
 
 ```
-$ python3 lang_frequency.py
-  
-  Enter path to file with text: <filepath> <number of words that should be displayed in the console>
+$ python3 lang_frequency.py <filepath> <number of words that should be displayed in the console>
   
   Your 6
   A 6
