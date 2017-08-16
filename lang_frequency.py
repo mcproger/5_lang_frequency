@@ -9,7 +9,7 @@ def load_data(filepath):
         return None
     with open(filepath, 'r', encoding='utf-8') as myfile:
         text = myfile.read()
-        return text
+        return text.lower()
 
 
 def get_argparser():
@@ -27,26 +27,19 @@ def delete_punctuation_from_text(text):
     return text
 
 
-def get_words_frequency(text):
-    words_frequency = collections.Counter()
-    for word in text:
-        words_frequency[word.capitalize()] += 1
-    return words_frequency
-
-
 def get_most_frequent_words(text, words_count):
     filtered_text = delete_punctuation_from_text(text)
-    words_frequency = get_words_frequency(filtered_text)
+    words_frequency = collections.Counter(filtered_text)
     most_frequent_words = words_frequency.most_common(words_count)
     return most_frequent_words
 
 
 if __name__ == '__main__':
     args = get_argparser()
-    if load_data(args.filepath):
+    if not load_data(args.filepath):
+        print('No such file in directory')
+    else:
         text = load_data(args.filepath).split()
         most_frequent_words = get_most_frequent_words(text, args.words_count)
         for word, count in most_frequent_words:
-            print(word, count)
-    else:
-        print('No such file in directory')
+            print(word, count)      
